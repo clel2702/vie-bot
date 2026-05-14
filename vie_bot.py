@@ -46,18 +46,18 @@ print("BOT STARTED")
 while True:
     offers = get_offers()
 
-    for o in offers:
-        oid = o.get("id")
+ for o in offers:
+    oid = o.get("id")
 
-        if oid in seen:
-            continue
+    if oid in seen:
+        continue
 
-       seen.add(oid)
+    seen.add(oid)
 
-with open(FILE, "w") as f:
-    json.dump(list(seen), f)
+    with open(FILE, "w") as f:
+        json.dump(list(seen), f)
 
-        send_message(format_offer(o))
-        print("Envoyé:", oid)
+    send_message(format_offer(o))
+    print("Envoyé:", oid)
 
     time.sleep(60)
