@@ -3,8 +3,8 @@ import time
 import json
 import os
 
-TOKEN = "8675818877:AAEuWEf_9GJVnibFUPVu5_Xu46iH-EQt5q0"
-CHAT_ID = "7912945095"
+TOKEN = os.getenv("TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 URL = "https://civiweb-api-prd.azurewebsites.net/api/Offers/search"
 
