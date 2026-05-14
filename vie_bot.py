@@ -53,6 +53,8 @@ while True:
             continue
 
         seen.add(oid)
+        with open(FILE, "w") as f:
+    json.dump(list(seen), f)
 
         send_message(format_offer(o))
         print("Envoyé:", oid)
