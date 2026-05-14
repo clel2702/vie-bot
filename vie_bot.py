@@ -11,7 +11,10 @@ URL = "https://civiweb-api-prd.azurewebsites.net/api/Offers/search"
 FILE = "seen.json"
 
 if os.path.exists(FILE):
-    seen = set(json.load(open(FILE)))
+    try:
+        seen = set(json.load(open(FILE)))
+    except:
+        seen = set()
 else:
     seen = set()
 
