@@ -1,12 +1,19 @@
 import requests
 import time
+import json
+import os
 
 TOKEN = "8675818877:AAEuWEf_9GJVnibFUPVu5_Xu46iH-EQt5q0"
 CHAT_ID = "7912945095"
 
 URL = "https://civiweb-api-prd.azurewebsites.net/api/Offers/search"
 
-seen = set()
+FILE = "seen.json"
+
+if os.path.exists(FILE):
+    seen = set(json.load(open(FILE)))
+else:
+    seen = set()
 
 def send_message(text):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
